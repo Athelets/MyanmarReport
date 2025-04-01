@@ -86,6 +86,39 @@
         margin: 5px auto;
     }
 }
+.clinic-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+.clinic-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 300px;
+}
+.clinic-card h3 {
+    color: #d9534f;
+}
+.qr-code {
+    width: 100px;
+    margin-top: 10px;
+}
+@media screen and (max-width: 768px) {
+    .clinic-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .clinic-card {
+        width: 90%;
+    }
+}
+
+
 
 
     </style>
@@ -110,6 +143,7 @@
    <div class="button-container">
     <button onclick="scrollToSection('casualty')">သေဆုံး/ဒဏ်ရာရ/ပျောက်ဆုံး</button>
     <button onclick="scrollToSection('earthquake-count')">ငလျင်အကြိမ်အရေအတွက်</button>
+    <button onclick="scrollToSection('free-clinic')">အခမဲ့ ဆေးကုခန်း</button>
     <button onclick="scrollToSection('emergency')">အရေးပေါ်ဖုန်းနံပါတ်</button>
 </div>
 
@@ -138,8 +172,27 @@
     </div>
     <h2 id="earthquake-count">စုစုပေါင်း လှုပ်ခတ်ပြီးသော ငလျင်အကြိမ်အရေအတွက်</h2>
 <div class="earthquake-count">
-    <p><span>၁၇၅</span> ကြိမ်</p>
+    <p><span>-</span> ကြိမ်</p>
 </div>
+<h2 id="free-clinic">အခမဲ့ ပြည်သူ့ ဆေးကုခန်း</h2>
+<div class="clinic-container">
+ 
+    
+    <div class="clinic-card">
+        <h3>ဆေးခန်းပြဖို့ ဆက်သွယ်ပါ။</h3>
+        <p><strong>Opening Hours:</strong> Every Day (10AM - 10PM)</p>
+        <p>ဖုန်းနံပါတ် တစ်ခုမဟုတ်တစ်ခု ဆက်သွယ်ပေးပါရန်နှင့် နံပါတ်များအားလုံး ခေါ်ဆိုမရဖြစ်နေပါက ၁၅မိနစ်ခန့် စောင့်ဆိုင်းပြီးမှ ပြန်လည်ခေါ်ဆိုပေးပါရန် မေတ္တာရပ်ခံအပ်ပါသည်။</p>
+        <p><strong>Phone:</strong> +95 880910012</p>
+        <p><strong>Phone:</strong> +95 761784684</p>
+        <p><strong>Phone:</strong> +95 769412699</p>
+        <p><strong>Phone:</strong> +95 697461953</p>
+        <p><strong>Phone:</strong> +95 789956928</p>
+       <!--<img src="qr.JPG" alt="QR Code" class="qr-code">--> 
+    </div>
+</div>
+
+
+
 
     <h3 id="emergency">အရေးပေါ်ကယ်ဆယ်ရေးနှင့် အကူအညီ ဖုန်းနံပါတ်များ</h3>
     <table>
