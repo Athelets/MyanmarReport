@@ -46,7 +46,7 @@
             body { padding: 10px; }
             button { width: 100%; }
         }
-             .earthquake-count {
+        .earthquake-count {
     font-size: 32px;
     color: #d9534f;
     text-align: center;
@@ -57,7 +57,37 @@
     font-size: 40px;
     color: #d9534f;
 }
-        
+.button-container {
+    text-align: center;
+    margin: 80px 0 20px; /* Adjust spacing */
+}
+.button-container button {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.button-container button:hover {
+    background-color: #c9302c;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .button-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .button-container button {
+        width: 90%;
+        margin: 5px auto;
+    }
+}
+
+
     </style>
      <script>
         function updateClock() {
@@ -67,10 +97,23 @@
             document.getElementById("clock").innerHTML = date + " " + time;
         }
         setInterval(updateClock, 1000);
+        function scrollToSection(sectionId) {
+    document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+}
+
     </script>
 </head>
 <body onload="updateClock()">
-    <div class="clock-container" id="clock"></div>
+    
+   <div class="clock-container" id="clock"></div>
+   
+   <div class="button-container">
+    <button onclick="scrollToSection('casualty')">သေဆုံး/ဒဏ်ရာရ/ပျောက်ဆုံး</button>
+    <button onclick="scrollToSection('earthquake-count')">ငလျင်အကြိမ်အရေအတွက်</button>
+    <button onclick="scrollToSection('emergency')">အရေးပေါ်ဖုန်းနံပါတ်</button>
+</div>
+
+    
 
     <h1>မြန်မာ မြေငလျင် သတင်းအချက်အလက်</h1>
 
@@ -78,16 +121,11 @@
     <div class="map-container">
         <!-- Myanmar Map Image -->
         <img src="mmmap.png" alt="Myanmar Map" width="100%" />
-        <!-- Mandalay Region Highlight -->
-       <!-- <div class="highlight"></div> -->
+     
     </div>
-    <h2>စုစုပေါင်း လှုပ်ခတ်ပြီးသော ငလျင်အကြိမ်အရေအတွက်</h2>
-<div class="earthquake-count">
-    <p><span> - </span> ကြိမ်</p>
-</div>
 
     <!-- Casualty Report -->
-    <h2>Casualty Report</h2>
+    <h2 id="casualty">Casualty Report</h2>
     
     <div class="casualty-count">
         <p>သေဆုံး - <span>၃၁၉၅ဦး</span></p>
@@ -98,8 +136,12 @@
     <div class="casualty-count">
         <p>ပျောက်ဆုံး - <span>၇၀၅ဦး</span></p>
     </div>
+    <h2 id="earthquake-count">စုစုပေါင်း လှုပ်ခတ်ပြီးသော ငလျင်အကြိမ်အရေအတွက်</h2>
+<div class="earthquake-count">
+    <p><span>-</span> ကြိမ်</p>
+</div>
 
-    <h3>အရေးပေါ်ကယ်ဆယ်ရေးနှင့် အကူအညီရရှိနိုင်သော လိပ်စာနှင့် ဖုန်းနံပါတ်များ</h3>
+    <h3 id="emergency">အရေးပေါ်ကယ်ဆယ်ရေးနှင့် အကူအညီ ဖုန်းနံပါတ်များ</h3>
     <table>
         <tr class="table-heading">
             <th>Organization (အဖွဲ့အစည်း)</th>
@@ -161,7 +203,8 @@
         <tr>
             <td>သောက်သုံးရေ</td>
             <td>၇၂အေလမ်း ၁၁၂နှင့် ၁၁၃ကြား</td>
-        </tr> <tr>
+        </tr>
+        <tr>
             <td>ကြံ့နှစ်ကောင်နှင့် အားသစ်မာန် ကုမ္ပဏီ ကူညီကယ်ဆယ်ရေး - ကိုမြတ်သူ(စစ်ကိုင်းတာဝန်ခံ)</td>
             <td>09686568236</td>
         </tr>
@@ -169,7 +212,6 @@
             <td>ရတနာ PK Htun - ထမင်းအလှူ</td>
             <td>၆၆လမ်း ၁၀၉လမ်းထောင့် ရတနာ PK Htun စိန်ရွှေရတနာဆိုင်</td>
         </tr>
-        
        
     </table>
     <footer style="text-align: center; padding: 10px; background-color: #333; color: white; margin-top: 20px;">
