@@ -41,14 +41,26 @@
             background-color: #17a2b8;
             color: white;
         }
-
+        .clock-container { position: absolute; top: 10px; right: 20px; font-size: 18px; font-weight: bold; background-color: #333; color: white; padding: 8px 12px; border-radius: 5px; }
         @media screen and (max-width: 768px) {
             body { padding: 10px; }
             button { width: 100%; }
         }
+        
     </style>
+     <script>
+        function updateClock() {
+            const now = new Date();
+            const date = now.toLocaleDateString();
+            const time = now.toLocaleTimeString();
+            document.getElementById("clock").innerHTML = date + " " + time;
+        }
+        setInterval(updateClock, 1000);
+    </script>
 </head>
-<body>
+<body onload="updateClock()">
+    <div class="clock-container" id="clock"></div>
+
     <h1>မြန်မာ မြေငလျင် သတင်းအချက်အလက်</h1>
 
     <!-- Myanmar Map with Mandalay highlighted in red -->
@@ -236,5 +248,8 @@
             <td>+95 555555555</td>
         </tr>
     </table>
+    <footer style="text-align: center; padding: 10px; background-color: #333; color: white; margin-top: 20px;">
+        &copy; 2025 မြန်မာ မြေငလျင် သတင်းအချက်အလက် | All Rights Reserved. Contact - 09757541448
+    </footer>
 </body>
 </html>
